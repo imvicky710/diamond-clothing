@@ -4,13 +4,13 @@ import { selectCartItems } from '../../store/cart/cart.selector';
 
 import { CheckoutItemContainer, ImageContainer, BaseSpan, Quantity, Arrow, Value, RemoveButton } from './checkout-item.styles';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { CartItem as TCartItem } from '../../store/cart/cart.types';
 
 type CheckoutItemProps = {
     cartItem: TCartItem;
 }
-const CheckoutItem: FC<CheckoutItemProps> = ({ cartItem }) => {
+const CheckoutItem: FC<CheckoutItemProps> = memo(({ cartItem }) => {
     const { name, imageUrl, price, quantity } = cartItem;
 
     const dispatch = useDispatch();
@@ -35,6 +35,6 @@ const CheckoutItem: FC<CheckoutItemProps> = ({ cartItem }) => {
             <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
         </CheckoutItemContainer>
     );
-};
+});
 
 export default CheckoutItem;
