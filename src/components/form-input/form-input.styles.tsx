@@ -46,6 +46,10 @@ export const Input = styled.input`
   &:focus ~ ${FormInputLabel} {
     ${shrinkLabelStyles};
   }
+
+  @media screen and (max-width: 800px) {
+    width: 300px;
+  }
 `;
 
 export const Group = styled.div`
