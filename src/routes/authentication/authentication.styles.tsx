@@ -7,7 +7,6 @@ export const AuthenticationContainer = styled.div`
   margin: 30px auto;
   @media screen and (max-width: 800px) {
     display: grid;
-    align-items: center;
-    padding: 0 10px 0 10px;
+    width: 100%;
   }
 `;
