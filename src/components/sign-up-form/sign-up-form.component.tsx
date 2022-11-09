@@ -1,7 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
-import { SignupContainer, H2 } from "./sign-up-form.styles";
+import { SignupContainer, H2, ButtonsContainer } from "./sign-up-form.styles";
 import { useDispatch } from "react-redux";
 import { signUpStart } from "../../store/user/user.action";
 import { AuthError, AuthErrorCodes } from "firebase/auth";
@@ -33,9 +33,9 @@ const SignUpForm = () => {
       resetFormFields();
     } catch (error) {
       if ((error as AuthError).code === AuthErrorCodes.EMAIL_EXISTS) {
-        alert('Cannot create user, email already in use');
+        alert("Cannot create user, email already in use");
       } else {
-        console.log('User creation encountered an error', error);
+        console.log("User creation encountered an error", error);
       }
     }
   };
@@ -85,8 +85,9 @@ const SignUpForm = () => {
           name="confirmPassword"
           value={confirmPassword}
         />
-
-        <Button type="submit">Sign Up</Button>
+        <ButtonsContainer>
+          <Button type="submit">Sign Up</Button>
+        </ButtonsContainer>
       </form>
     </SignupContainer>
   );

@@ -2,9 +2,6 @@ import { GlobalStyle } from "./global.styles";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
 import { useDispatch } from "react-redux";
-//import { onAuthStateChangedListener, createUserDocumentFromAuth, getCurrentUser } from "./utils/firebase/firebase.utils";
-//import { getCurrentUser } from "./utils/firebase/firebase.utils";
-//import { setCurrentUser } from './store/user/user.action';
 import { checkUserSession } from './store/user/user.action';
 import Spinner from "./components/spinner/spinner.component";
 
@@ -18,23 +15,13 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // const unsubscribe = onAuthStateChangedListener((user) => {
-    //   if (user) {
-    //     createUserDocumentFromAuth(user);
-    //   }
-    //   dispatch(setCurrentUser(user));
-    // });
-    // return unsubscribe;
-
-    /*Converting onAuthStateChanged listener to Promise*/
-    //getCurrentUser().then((user => console.log(user)));
     dispatch(checkUserSession());
   }, [dispatch]);
 
   return (
     <div>
-      <GlobalStyle />
       <Suspense fallback={<Spinner />}>
+        <GlobalStyle />
         <Routes>
           <Route path="/" element={<Navigation />}>
             <Route index element={<Home />} />

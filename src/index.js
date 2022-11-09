@@ -9,7 +9,6 @@ import { stripePromise } from "./utils/stripe/stripe.utils";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 import App from "./App";
-import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

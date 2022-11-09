@@ -6,6 +6,7 @@ export const SignInContainer = styled.div`
   width: 380px;
   @media screen and (max-width: 800px) {
     display: grid;
+    justify-content: center;
   }
 `;
 export const H2 = styled.h2`
@@ -17,5 +18,6 @@ export const ButtonsContainer = styled.div`
   @media screen and (max-width: 800px) {
     display: grid;
     row-gap: 10px;
+    justify-content: center;
   }
 `;
